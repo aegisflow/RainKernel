@@ -3,13 +3,13 @@ from .integrity import IntegrityEngine
 
 class GeneStructure:
     """
-    Define o esquema atômico de um gene no Kernel Rain.
+    Defines the atomic schema of a gene in Rain Kernel.
     """
     
     @staticmethod
-    def compose(morphology_id: str, sequence_ Any, compress: bool = False) -> Dict[str, Any]:
+    def compose(morphology_id: str, sequence_data: Any, compress: bool = False) -> Dict[str, Any]:
         """
-        Monta a estrutura base com assinatura embutida.
+        Builds base structure with embedded signature.
         """
         payload_vector = f"{morphology_id}{sequence_data}"
         signature = IntegrityEngine.derive_fingerprint(payload_vector)
@@ -24,6 +24,6 @@ class GeneStructure:
     @staticmethod
     def decompose(gene: Dict[str, Any]) -> Tuple[str, Any]:
         """
-        Extrai componentes válidos para processamento.
+        Extracts valid components for processing.
         """
         return gene.get("m"), gene.get("s")
