@@ -4,15 +4,15 @@ from typing import Union, Dict, Any
 
 class IntegrityEngine:
     """
-    Motor de Integridade Criptográfica.
-    Garante que genes não sofram entropia externa.
+    Cryptographic Integrity Engine.
+    Ensures genes do not suffer external entropy.
     """
     
     @staticmethod
     def derive_fingerprint(payload: Union[str, bytes]) -> str:
         """
-        Gera vetor de identidade imutável (SHA-256 wrapped).
-        Não utiliza hash efêmero do sistema.
+        Generates immutable identity vector (SHA-256 wrapped).
+        Does not use ephemeral system hash.
         """
         if isinstance(payload, str):
             payload = payload.encode('utf-8')
@@ -23,7 +23,7 @@ class IntegrityEngine:
     @staticmethod
     def validate_signature(sequence: Dict[str, Any]) -> bool:
         """
-        Verifica se a estrutura não foi corrompida.
+        Verifies structure has not been corrupted.
         """
         if 'sig' not in sequence:
             return False
