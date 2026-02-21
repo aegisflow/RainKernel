@@ -5,7 +5,7 @@ from typing import Any, Dict
 
 class SymbolTable:
     """
-    Dicionário global de símbolos frequentes para IA/Logs.
+    Global dictionary of frequent symbols for IA/Logs.
     """
     COMMON_TOKENS = {
         "id": "§1", "type": "§2", "data": "§3", 
@@ -29,13 +29,13 @@ class SymbolTable:
 
 class SemanticCompressor:
     """
-    Engine de compressão específica para dados estruturados.
+    Compression engine specific for structured data.
     """
     
     @staticmethod
-    def encode_payload( Any) -> str:
+    def encode_payload(data: Any) -> str:
         """
-        1. Serializa 2. Substitui Semântica 3. Comprime Binário 4. Base64
+        1. Serialize 2. Semantic Substitution 3. Binary Compress 4. Base64
         """
         json_str = json.dumps(data, separators=(',', ':'))
         semantic_str = SymbolTable.compress_text(json_str)
@@ -45,7 +45,7 @@ class SemanticCompressor:
     @staticmethod
     def decode_payload(blob: str) -> Any:
         """
-        Reverte o processo exato.
+        Reverses the exact process.
         """
         compressed = base64.b64decode(blob.encode('ascii'))
         semantic_str = zlib.decompress(compressed).decode('utf-8')
