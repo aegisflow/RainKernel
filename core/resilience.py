@@ -3,15 +3,15 @@ from .integrity import IntegrityEngine
 
 class DNAResilience:
     """
-    Camada de tolerância a falhas inspirada em replicação de DNA.
-    Recupera dados mesmo com fragmentação severa.
+    Fault tolerance layer inspired by DNA replication.
+    Recovers data even with severe fragmentation.
     """
 
     @staticmethod
-    def add_redundancy( bytes, copies: int = 3) -> bytes:
+    def add_redundancy(data: bytes, copies: int = 3) -> bytes:
         """
-        Cria múltiplas cópias com variações para recuperação.
-        Similar a cromossomos homólogos.
+        Creates multiple copies with variations for recovery.
+        Similar to homologous chromosomes.
         """
         chunks = [data[i:i+256] for i in range(0, len(data), 256)]
         redundant_chunks = []
@@ -26,8 +26,8 @@ class DNAResilience:
     @staticmethod
     def recover_from_fragments(fragments: List[bytes]) -> bytes:
         """
-        Reconstrói dados mesmo com até 66% de perda.
-        Usa votação majoritária entre cópias.
+        Reconstructs data even with up to 66% loss.
+        Uses majority vote among copies.
         """
         recovered = []
         for i in range(0, len(fragments), 3):
@@ -39,12 +39,12 @@ class DNAResilience:
     
     @staticmethod
     def _parity_chunk(chunk: bytes, seed: int) -> bytes:
-        """Gera variação com parity para recuperação."""
+        """Generates variation with parity for recovery."""
         return bytes((b + seed) % 256 for b in chunk)
     
     @staticmethod
     def _majority_vote(chunks: List[bytes]) -> bytes:
-        """Recupera byte mais comum entre cópias."""
+        """Recovers most common byte among copies."""
         if not chunks:
             return b''
         max_len = max(len(c) for c in chunks)
@@ -59,13 +59,13 @@ class DNAResilience:
     @staticmethod
     def validate_chain(genes: List[Dict[str, Any]]) -> bool:
         """
-        Verifica a integridade de uma cadeia de genes.
+        Verifies integrity of a gene chain.
         """
         return all(IntegrityEngine.validate_signature(g) for g in genes)
 
     @staticmethod
     def recover_partial(genes: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
-        Filtra genes corrompidos, mantendo os válidos.
+        Filters corrupted genes, keeping valid ones.
         """
         return [g for g in genes if IntegrityEngine.validate_signature(g)]
