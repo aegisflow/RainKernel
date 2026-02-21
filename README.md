@@ -1,6 +1,4 @@
-### 🧬 Rain Kernel — Final README.md (English, Ready to Upload)
-
-*Copy this entire content and save as `README.md` (file #17 in your upload sequence)*
+### 🧬 Rain Kernel — Final README.md
 
 ```markdown
 # 🧬 Rain Kernel
