@@ -1,0 +1,97 @@
+# ============================================
+# Rain Kernel .gitignore
+# Standard for Python Open-Source Projects
+# ============================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Virtual Environments ---
+venv/
+ENV/
+env/
+.venv/
+.pyenv/
+
+# --- Secrets & Local Configs ---
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.secret
+*.credentials
+secrets.json
+config.local.json
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Logs & Temporary Files ---
+*.log
+logs/
+tmp/
+temp/
+.cache/
+pytest_cache/
+.coverage
+htmlcov/
+
+# --- Testing & Coverage ---
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+
+# --- Build & Distribution ---
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Jupyter Notebooks (if used) ---
+.ipynb_checkpoints/
+
+# --- Machine Learning (if used later) ---
+*.h5
+*.pkl
+*.pth
+*.onnx
+models/
+
+# ============================================
+# DO NOT IGNORE (Keep Visible for Community)
+# ============================================
+# ✅ Source code (.py)
+# ✅ Documentation (.md)
+# ✅ Project configs (pyproject.toml, setup.cfg)
+# ✅ GitHub workflows (.github/workflows/)
+# ✅ License, README, CONTRIBUTING
+# ============================================
