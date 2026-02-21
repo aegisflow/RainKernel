@@ -2,19 +2,19 @@ from typing import List
 
 class HelixEncoder:
     """
-    Codificação ultra-densa inspirada em nucleotídeos.
-    4 símbolos base = 2 bits por símbolo.
+    Ultra-dense encoding inspired by nucleotides.
+    4 base symbols = 2 bits per symbol.
     """
     BASES = ['α', 'β', 'γ', 'δ']
     
     @staticmethod
-    def to_helix( bytes) -> str:
+    def to_helix(data: bytes) -> str:
         """
-        Converte bytes para sequência tipo DNA.
-        2 bits por símbolo = 4x mais denso que hex.
+        Converts bytes to DNA-like sequence.
+        2 bits per symbol = 4x denser than hex.
         """
         helix: List[str] = []
-        for byte in 
+        for byte in data:
             for i in range(0, 8, 2):
                 pair = (byte >> i) & 0b11
                 helix.append(HelixEncoder.BASES[pair])
@@ -23,7 +23,7 @@ class HelixEncoder:
     @staticmethod
     def from_helix(helix: str) -> bytes:
         """
-        Reconverte sequência DNA para bytes.
+        Reconverts DNA sequence to bytes.
         """
         reverse_map = {v: k for k, v in enumerate(HelixEncoder.BASES)}
         bytes_list: List[int] = []
