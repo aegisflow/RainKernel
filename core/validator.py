@@ -1,6 +1,6 @@
 """
 Rain Kernel Self-Validator
-Verifica a integridade, sanidade e saúde do núcleo.
+Verifies integrity, sanity, and health of the core.
 Inspired by DNA self-repair mechanisms.
 """
 import sys
@@ -9,12 +9,12 @@ from typing import List, Tuple
 
 class KernelValidator:
     """
-    Valida a saúde do Rain Kernel usando seus próprios mecanismos.
+    Validates Rain Kernel health using its own mechanisms.
     """
     
     @staticmethod
     def check_integrity() -> Tuple[bool, List[str]]:
-        """Verifica se os módulos críticos importam sem erro."""
+        """Verifies if critical modules import without error."""
         errors = []
         modules = [
             'core.integrity',
@@ -36,7 +36,7 @@ class KernelValidator:
 
     @staticmethod
     def check_semantic_sanity() -> Tuple[bool, str]:
-        """Teste rápido de compressão/decompressão para validar lógica."""
+        """Quick compression/decompression test to validate logic."""
         try:
             from core.codec import DataCodec
             from core.integrity import IntegrityEngine
@@ -44,13 +44,13 @@ class KernelValidator:
             test_data = {"test": "rain_kernel", "v": 1}
             gene = DataCodec.ingest(test_data, compress=True)
             
-            # Verifica assinatura
+            # Verify signature
             if not IntegrityEngine.validate_signature(gene):
                 return False, "❌ Signature validation failed"
             
-            # Verifica reconstrução
+            # Verify reconstruction
             recovered = DataCodec.express(gene)
-            if recovered != test_
+            if recovered != test_data:
                 return False, "❌ Data reconstruction mismatch"
                 
             return True, "✅ Semantic round-trip OK"
@@ -59,11 +59,11 @@ class KernelValidator:
 
     @staticmethod
     def run_full_diagnostic() -> int:
-        """Executa todos os checks e retorna código de saída (0=ok, 1=fail)."""
+        """Runs all checks and returns exit code (0=ok, 1=fail)."""
         print("🧬 Rain Kernel Self-Diagnostic v0.1")
         print("-" * 40)
         
-        # Check 1: Integridade de Imports
+        # Check 1: Module Integrity
         print("🔍 Checking module integrity...")
         ok, errors = KernelValidator.check_integrity()
         if ok:
@@ -73,7 +73,7 @@ class KernelValidator:
                 print(err)
             return 1
         
-        # Check 2: Sanidade Semântica
+        # Check 2: Semantic Sanity
         print("\n🔍 Running semantic sanity check...")
         ok, msg = KernelValidator.check_semantic_sanity()
         print(msg)
