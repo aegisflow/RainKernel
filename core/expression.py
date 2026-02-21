@@ -2,14 +2,14 @@ from typing import Dict, Any, Callable, Optional, List
 
 class GeneExpression:
     """
-    Faz os genes 'expressarem' dados como DNA expressa proteínas.
-    O dado vira comportamento executável.
+    Makes genes 'express' data like DNA expresses proteins.
+    Data becomes executable behavior.
     """
     
     @staticmethod
     def transcribe(gene: Dict[str, Any]) -> Callable[[Optional[Dict]], Any]:
         """
-        Transforma gene em função executável.
+        Transforms gene into executable function.
         """
         def express(context: Optional[Dict[str, Any]] = None) -> Any:
             if context is None:
@@ -18,7 +18,7 @@ class GeneExpression:
             morphology = gene.get('m', 'literal')
             sequence = gene.get('s', '')
             
-            # Remove sufixo de compressão para avaliação
+            # Remove compression suffix for evaluation
             morphology = morphology.replace('_cmp', '')
             
             if morphology == 'literal':
@@ -46,7 +46,7 @@ class GeneExpression:
     @staticmethod
     def execute(gene: Dict[str, Any], context: Optional[Dict[str, Any]] = None) -> Any:
         """
-        Executa a expressão do gene imediatamente.
+        Executes gene expression immediately.
         """
         expression = GeneExpression.transcribe(gene)
         return expression(context)
