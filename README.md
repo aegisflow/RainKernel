@@ -339,8 +339,7 @@ Built with:
 
 | Channel | Purpose |
 |---------|---------|
-| 💬 [Telegram](https://t.me/YOUR_TELEGRAM_CHANNEL) | Discussion, help, questions |
-| 📖 [Discussions](../../discussions) | Ideas, Q&A, announcements |
+| 💬 [Telegram](https://t.me/rainkernell) | Discussion, help, questions |
 | 🐛 [Issues](../../issues) | Bugs, features, roadmap |
 
 ---
@@ -361,7 +360,7 @@ Built with:
 
 **Made with 🧬 by the Rain Kernel Team**
 
-[GitHub](https://github.com/aegisflow/rain-kernel) • [Telegram](https://t.me/YOUR_TELEGRAM_CHANNEL) • [Releases](../../releases)
+[GitHub](https://github.com/aegisflow/rain-kernel) • [Telegram](https://t.me/rainkernell) • [Releases](../../releases)
 
 ---
 
@@ -375,8 +374,8 @@ Built with:
 
 | Placeholder | Replace With | Example |
 |-------------|--------------|---------|
-| `YOUR_USERNAME` | Your GitHub username | `Rain012` |
-| `YOUR_TELEGRAM_CHANNEL` | Your Telegram channel name | `rainkernel` |
+| `aegisflow` | Your GitHub username | `Rain012` |
+| `(https://t.me/rainkernell)` | Your Telegram channel name | `rainkernel` |
 | `@Rain012` | Your GitHub handle | `@Rain012` |
 
 ---
