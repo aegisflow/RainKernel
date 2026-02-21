@@ -1,6 +1,4 @@
-### 🧬 Rain Kernel — Final README.md 
-
-![image URL](https://raw.githubusercontent.com/aegisflow/RainKernel/d3b6cac89e8931bd3e6ebb1e35826e6297840e75/logo_1280x640.png)
+### 🧬 Rain Kernel ![image URL](https://raw.githubusercontent.com/aegisflow/RainKernel/d3b6cac89e8931bd3e6ebb1e35826e6297840e75/logo_1280x640.png)
 
 ```markdown
 # 🧬 Rain Kernel
