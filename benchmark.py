@@ -22,7 +22,7 @@ def test_resilience():
     redundant = DNAResilience.add_redundancy(data)
     
     # Simulates 50% loss
-    fragments = redundant.split(b'§')
+    fragments = redundant.split(b'|')  # ✅ ASCII character
     import random
     random.shuffle(fragments)
     lost_count = len(fragments) // 2
