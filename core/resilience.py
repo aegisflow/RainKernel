@@ -21,7 +21,7 @@ class DNAResilience:
             redundant_chunks.append(DNAResilience._parity_chunk(chunk, 1))
             redundant_chunks.append(DNAResilience._parity_chunk(chunk, 2))
         
-        return b'§'.join(redundant_chunks)
+        return b'|'.join(redundant_chunks)  # ✅ ASCII character
     
     @staticmethod
     def recover_from_fragments(fragments: List[bytes]) -> bytes:
