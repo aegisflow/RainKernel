@@ -187,10 +187,3 @@ By contributing, you agree that your contributions will be licensed under the **
 ## 🙏 Thank You
 
 **Every contribution matters.** Whether it's a typo fix, a new feature, or a bug report — you're helping build a more sustainable future for data.
-
-*"Data dies. Rules remain."*
-
----
-
-**Made with 🧬 by the Rain Kernel Team**
-```
