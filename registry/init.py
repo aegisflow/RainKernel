@@ -1,2 +1,2 @@
 # Registry Package
-# Estado persistente do Kernel
+# Persistent Kernel State
