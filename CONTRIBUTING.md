@@ -1,7 +1,5 @@
 ## 📁 CONTRIBUTING.md
 
-*Copie e salve como arquivo #21:*
-
 ```markdown
 # 🌍 Contributing to Rain Kernel
 
